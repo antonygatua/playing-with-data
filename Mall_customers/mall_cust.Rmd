@@ -1,0 +1,33 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+```{r}
+library(dplyr)
+library(tidyverse)
+```
+
+```{r}
+# loading the data
+cust <- read.csv('/home/antonnymuiko/Documents/data_science/Data_Flair/Mall_customers/Mall_Customers.csv', sep = ',')
+str(cust)
+```
+```{r}
+print(names(cust))
+```
+```{r}
+cust %>% 
+  rename(
+  Gender = Genre,
+  Annual_Income = Annual.Income..k..,
+  Spending_Score = Spending.Score..1.100.
+  )
+```
+
+```{r}
+head(cust)
+```
